@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Discover vibrant student life at BBIS, KU. Explore tech clubs, cultural events, sports, and a thriving community where management meets innovation at Kathmandu University.">
+    <meta name="keywords" content="BBIS student life, KU student activities, BBIS campus culture, Management student clubs, Kathmandu University, DOMIC">
+    <meta name="author" content="BBIS, Kathmandu University">
+    
+    <title>Student Life at BBIS | Campus Culture & Activities - Kathmandu University</title>
+    
+    <style>
+        /* ========== CSS VARIABLES - EDIT COLORS HERE ========== */
+        :root {
+            --primary-color:  #941015;
+            --primary-dark:  #941015;
+            --secondary-color:  #941015;
+            --accent-color: #E8F4F8;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --background-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        /* ========== GENERAL STYLES ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* ========== NAVIGATION ========== */
+        nav {
+            background: var(--white);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* ========== HERO SECTION WITH VIDEO ========== */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* ========== CONTAINER ========== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ========== SECTION STYLES ========== */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ========== WELCOME SECTION ========== */
+        .welcome {
+            background: var(--background-light);
+        }
+
+        .welcome-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .welcome-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .welcome-text p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .welcome-image {
+            background: var(--accent-color);
+            height: 400px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 1rem;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* ========== STATISTICS SECTION ========== */
+        .stats {
+            background: var(--white);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--background-light);
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        /* ========== CONTENT CARDS SECTION ========== */
+        .content-cards {
+            background: var(--background-light);
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px var(--shadow);
+        }
+
+        .card-image {
+            height: 200px;
+            background: var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .card-content p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .card-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .card-link:hover {
+            color: var(--primary-dark);
+        }
+
+        /* ========== FEATURED HIGHLIGHT ========== */
+        .featured {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .featured-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .featured-text p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .featured-image {
+            height: 350px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* ========== TESTIMONIALS SECTION ========== */
+        .testimonials {
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--background-light);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            font-size: 1.2rem;
+            overflow: hidden;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* ========== CTA SECTION ========== */
+        .cta {
+            background: var(--background-light);
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* ========== RESPONSIVE DESIGN ========== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .welcome-content,
+            .featured-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">CENTRAL KUSOM</div>
+            <ul class="nav-links">
+                
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION WITH VIDEO ========== -->
+    <section class="hero">
+        <!-- ADD YOUR 3-SECOND VIDEO HERE -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="front.mp4" type="video/mp4">
+            <!-- Fallback for browsers that don't support video -->
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Student Life at BBIS</h1>
+            <p>Where Management Meets Innovation, Community, and Growth at Kathmandu University</p>
+        </div>
+    </section>
+
+    <!-- ========== WELCOME SECTION ========== -->
+    <section class="welcome">
+        <div class="container">
+            <div class="welcome-content">
+                <div class="welcome-text">
+                    <h2>Welcome to the BBIS Community</h2>
+                    <p>From your professors and mentors to your friends and teammates, BBIS at Kathmandu University is a vibrant community where you can feel supported and encouraged. Located at the scenic Dhulikhel campus under DOMIC, BBIS offers a unique blend of management education and technological innovation.</p>
+                    
+                    <p>No matter where you come from, BBIS is home. Our diverse student body creates a collaborative environment where future business leaders and technology innovators learn, grow, and thrive together.</p>
+                    
+                    <p>Through clubs, events, projects, and everyday interactions, you'll build lasting friendships, develop professional skills, and create memories that last a lifetime. This is more than just education—it's a transformative experience.</p>
+                </div>
+                <div class="welcome-image">
+                    <p><img src="am.jpg" alt="Student clubs meeting" style="width: 100%; height: 100%; object-fit: cover">                       </div>
+:<br>"Students collaborating at BBIS campus"<br><br>Replace this div with: &lt;img src="your-image.jpg" alt="BBIS students"&gt;</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== STATISTICS SECTION ========== -->
+    <section class="stats">
+        <div class="container">
+            <h2 class="section-title">Student Life by the Numbers</h2>
+            <p class="section-subtitle">Real data that showcases the vibrant BBIS community</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">7+</div>
+                    <div class="stat-label">Active Student Clubs & Organizations</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Major Events & Activities Annually</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">80%</div>
+                    <div class="stat-label">Students Active in Clubs & Activities</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Student-Led Initiatives & Projects</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MAIN CONTENT CARDS (6 CARDS) ========== -->
+    <section class="content-cards" id="clubs">
+        <div class="container">
+            <h2 class="section-title">Explore Student Life at BBIS</h2>
+            <p class="section-subtitle">Discover the many ways to get involved, grow, and make your mark</p>
+            
+            <div class="cards-grid">
+                <!-- CARD 1: CLUBS -->
+                <div class="card">
+                    <div class="card-image">
+                      <img src="allclub.jpg" alt="Student clubs meeting" style="width: 100%; height: 100%; object-fit: cover">                       </div>
+                    <div class="card-content">
+                        <h3>Clubs & Organizations</h3>
+                        <p>Join dynamic student clubs including IS Club, Sports Club, Creative Club, Debate Club, and more. Whether you're into tech, entrepreneurship, or social impact, there's a community for you at BBIS.</p>
+                        <a href="kusom_club.html" class="card-link">Explore All Clubs →</a>
+                    </div>
+                </div>
+
+                <!-- CARD 2: EVENTS -->
+                <div class="card" id="events">
+                    <div class="card-image">
+                        <img src="ee.jpg" alt="Student clubs meeting" style="width: 100%; height: 100%; object-fit: cover">                       </div>
+                    
+                    <div class="card-content">
+                        <h3>Events & Festivals</h3>
+                        <p>Experience year-round excitement with signature events like Aarambha, tech fests, cultural celebrations, and competitions. From Hult Prize competitions to hackathons, every month brings new opportunities to participate and shine.</p>
+                        <a href="event.html" class="card-link">View Event Calendar →</a>
+                    </div>
+                </div>
+
+                <!-- CARD 3: FACILITIES -->
+                <div class="card" id="facilities">
+                    <div class="card-image">
+                        <img src="am.jpg" alt="Student clubs meeting" style="width: 100%; height: 100%; object-fit: cover">                       </div>
+
+                    <div class="card-content">
+                        <h3>Central Kusom </h3>
+                        <p>Study in modern facilities, collaborate in tech labs, relax in student lounges, and enjoy recreational spaces. Our Dhulikhel campus offers everything you need for academic excellence and personal well-being.</p>
+                        <a href="#facilities-page" class="card-link">Explore Campus →</a>
+                    </div>
+                </div>
+
+                <!-- CARD 4: SUPPORT -->
+                <div class="card" id="support">
+                    <div class="card-image">
+                    <img src="re.jpg" alt="Student clubs meeting" style="width: 100%; height: 100%; object-fit: cover">           
+
+                    </div>
+                    <div class="card-content">
+                        <h3>Research & Development</h3>
+                        <p>Access comprehensive support services including peer mentorship through KULPD, academic guidance, career counseling, and wellness programs. Your success and well-being are our top priorities.</p>
+                        <a href="#support-page" class="card-link">Learn About Support →</a>
+                    </div>
+                </div>
+
+                <!-- CARD 5: NEW CARD - CUSTOMIZE THIS -->
+                <div class="card">
+                    <div class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <h3>Curriculum</h3>
+                        <p>Develop essential leadership skills through workshops, seminars, and hands-on opportunities. Take on roles in clubs, organize events, and build the confidence to lead in your future career.</p>
+                        <a href="#support-page" class="card-link">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- CARD 6: NEW CARD - CUSTOMIZE THIS -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="lab.jpg" alt="Student clubs meeting" style="width: 100%; height: 100%; object-fit: cover">           
+                    </div>
+                    <div class="card-content">
+                        <h3>Faculty & Lab</h3>
+                        <p>Connect with industry partners, attend career fairs, and access internship opportunities. Our career services help you bridge the gap between education and your professional future.</p>
+                        <a href="#career-page" class="card-link">Explore Opportunities →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURED HIGHLIGHT ========== -->
+    <section class="featured">
+        <div class="container">
+            <div class="featured-content">
+                <div class="featured-text">
+                    <h2>Innovation in Action</h2>
+                    <p>Over 70% of BBIS students actively participate in innovation-driven activities, from competing in the Hult Prize to launching startups through the entrepreneurship club. Our students don't just learn about business and technology—they create it.</p>
+                    
+                    <p>Whether it's building robots, developing apps, participating in case competitions, or pitching business ideas, BBIS students are makers, thinkers, and doers who are shaping the future of Nepal's business and tech landscape.</p>
+                </div>
+                <div class="featured-image">
+                    📷 Add featured image here:<br>"Students in innovation activity"
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS WITH PHOTOS ========== -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Student Voices</h2>
+            <p class="section-subtitle">Hear from BBIS students about their experiences</p>
+            
+            <div class="testimonials-grid">
+                <!-- TESTIMONIAL 1 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Joining the Robotics Club at BBIS opened up a whole new world for me. The hands-on projects and mentorship helped me develop skills I never thought I'd have. The community here pushes you to be your best."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                        <img src="student1.jpg" alt="Student" >                      
+                            </div>
+                        <div class="author-info">
+                            <h4>Luniva RajBhandari</h4>
+                            <p>3rd Year BBIS Student</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TESTIMONIAL 2 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Participating in Aarambha and the Debate Club gave me confidence I never knew I had. BBIS isn't just about academics—it's about discovering who you are and what you're capable of achieving."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                        <img src="student2.jpg" alt="Student" >                      
+                    
+                        </div>
+                        <div class="author-info">
+                            <h4>Parabda Singh Mahat</h4>
+                            <p>Final Year BBIS Student</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TESTIMONIAL 3 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The collaborative environment at BBIS is incredible. Through AIESEC and various events, I've built a network of like-minded friends who support each other's growth. This place truly feels like home."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <!-- ADD PHOTO: Replace with <img src="student3.jpg" alt="Student"> -->
+                            SD
+                        </div>
+                        <div class="author-info">
+                            <h4>Surye Dahal</h4>
+                            <p>2nd Year BBIS Student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CALL TO ACTION ========== -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Join the BBIS Community?</h2>
+            <p>Take the next step in your journey and become part of something extraordinary</p>
+            <div class="cta-buttons">
+                <a href="#admissions" class="btn btn-primary">Apply to BBIS</a>
+                <a href="#curriculum" class="btn btn-secondary">Explore Our Program</a>
+                <a href="#contact" class="btn btn-secondary">Visit Our Campus</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About BBIS</h3>
+                    <p>Bachelor of Business Information Systems (BBIS) at Kathmandu University </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#about">About BBIS</a>
+                    <a href="#curriculum">Curriculum & Courses</a>
+                    <a href="#admissions">Admissions</a>
+                    <a href="#careers">Careers & Alumni</a>
+                    <a href="#contact">Contact Us</a>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><strong>Department of Management & Information Systems (DOMIC)</strong></p>
+                    <p>Kathmandu University</p>
+                    <p>28 Kilo, Dhulikhel, Nepal</p>
+                    <p>Email: info@ku.edu.np</p>
+                    <p>Phone: +977-11-490000</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <a href="https://www.facebook.com/kathmanduniversity">Facebook</a>
+                    <a href="https://www.instagram.com/sbis.mic/"></a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 BBIS, Kathmandu University. All rights reserved. | Student Life Content Marketing Project</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

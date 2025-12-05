@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Life at KUSOM | BBIS Experience</title>
+    
+    <style>
+        :root {
+            --primary-red: #FF0000;
+            --dark-red: #CC0000;
+            --navy: #1a2332;
+            --charcoal: #2C3E50;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --accent-blue: #4A90E2;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a2332 0%, #2C3E50 50%, #FF0000 100%);
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+        }
+
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-red);
+            border-radius: 50%;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            background: var(--accent-blue);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .shape:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            background: var(--white);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(180deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: var(--white);
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            letter-spacing: -2px;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+            animation: slideDown 1s ease-out;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: slideUp 1s ease-out;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator::after {
+            content: '↓';
+            color: var(--white);
+            font-size: 2rem;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(20px); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 3rem;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        nav.scrolled {
+            padding: 0.5rem 3rem;
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary-red);
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary-red);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 3rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--primary-red);
+            color: var(--white);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Campus Highlights Grid */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .highlight-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-red), var(--accent-blue));
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 60px rgba(255,0,0,0.15);
+        }
+
+        .highlight-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-image-container {
+            height: 280px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .highlight-card:hover .card-image-container img {
+            transform: scale(1.1);
+        }
+
+        .image-placeholder {
+            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        .card-body h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .card-body p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-tag {
+            padding: 0.4rem 1rem;
+            background: var(--light-gray);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* Full Width Image Section */
+        .full-width-section {
+            position: relative;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--navy), var(--charcoal));
+            overflow: hidden;
+        }
+
+        .full-width-video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,0,0,0.8), rgba(26,35,50,0.8));
+            z-index: 1;
+        }
+
+        .full-width-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--white);
+            padding: 3rem;
+            max-width: 900px;
+        }
+
+        .full-width-content h2 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .full-width-content p {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--primary-red);
+            color: var(--white);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            background: var(--light-gray);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.15);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 2rem;
+            color: var(--white);
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Facilities Timeline */
+        .timeline-section {
+            background: var(--white);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 4rem auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary-red);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-red);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .timeline-content p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--primary-red);
+            border: 4px solid var(--white);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(255,0,0,0.2);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--navy), var(--charcoal));
+            color: var(--white);
+            text-align: center;
+            padding: 6rem 3rem;
+        }
+
+        .cta-section h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-red);
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(255,0,0,0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-red);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255,0,0,0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 3px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--navy);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 3rem 3rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+            }
+
+            .timeline-content {
+                width: 100%;
+                margin-left: 60px;
+            }
+
+            .timeline-dot {
+                left: 30px;
+            }
+
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">KUSOM BBIS</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#highlights">Highlights</a></li>
+                <li><a href="#facilities">Facilities</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="campus-hero.mp4" type="video/mp4">
+        </video>
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Campus Life at KUSOM</h1>
+            <p>Where Innovation Meets Tradition in the Heart of Dhulikhel</p>
+        </div>
+        <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- Campus Highlights -->
+    <section id="highlights">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">CAMPUS LIFE</span>
+                <h2 class="section-title">Experience KUSOM</h2>
+                <p class="section-subtitle">Discover the spaces where learning, innovation, and community come together to create an unforgettable university experience</p>
+            </div>
+
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="card-image-container">
+                        <div class="image-placeholder">📷 Add image: Academic Buildings</div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Modern Academic Spaces</h3>
+                        <p>State-of-the-art classrooms equipped with smart technology, collaborative learning spaces, and dedicated areas for group projects and presentations.</p>
+                        <div class="card-features">
+                            <span class="feature-tag">Smart Classrooms</span>
+                            <span class="feature-tag">Study Lounges</span>
+                            <span class="feature-tag">AC Rooms</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="card-image-container">
+                        <div class="image-placeholder">📷 Add image: Library</div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Central Library</h3>
+                        <p>A vast collection of resources, quiet study zones, digital archives, and comfortable spaces for research and learning. Open late for your convenience.</p>
+                        <div class="card-features">
+                            <span class="feature-tag">50,000+ Books</span>
+                            <span class="feature-tag">Digital Library</span>
+                            <span class="feature-tag">24/7 Access</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="card-image-container">
+                        <div class="image-placeholder">📷 Add image: Tech Labs</div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Innovation Labs</h3>
+                        <p>Cutting-edge computer labs, robotics workshops, and maker spaces where students bring their ideas to life through hands-on experimentation.</p>
+                        <div class="card-features">
+                            <span class="feature-tag">High-Tech Equipment</span>
+                            <span class="feature-tag">Robotics Lab</span>
+                            <span class="feature-tag">3D Printing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="card-image-container">
+                        <div class="image-placeholder">📷 Add image: Student Center</div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Student Hub</h3>
+                        <p>The heart of campus social life with comfortable lounges, cafeteria, recreation areas, and spaces for clubs and organizations to meet and collaborate.</p>
+                        <div class="card-features">
+                            <span class="feature-tag">Food Court</span>
+                            <span class="feature-tag">Gaming Zone</span>
+                            <span class="feature-tag">Event Space</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="card-image-container">
+                        <div class="image-placeholder">  <img src="sport.jpg" alt="Student clubs meeting" style="width: 100%; height: 100%; object-fit: cover">                      
+
+                    </div>
+                    <div class="card-body">
+                        <h3>Sports Complex</h3>
+                        <p>World-class athletic facilities including basketball courts, indoor sports arena, fitness center, and outdoor fields for various sports activities.</p>
+                        <div class="card-features">
+                            <span class="feature-tag">Multi-Sports Courts</span>
+                            <span class="feature-tag">Gym</span>
+                            <span class="feature-tag">Outdoor Fields</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="card-image-container">
+                        <div class="image-placeholder">📷 Add image: Green Campus</div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Green Campus</h3>
+                        <p>Beautiful landscaped grounds with walking paths, outdoor study areas, gardens, and breathtaking mountain views creating a serene learning environment.</p>
+                        <div class="card-features">
+                            <span class="feature-tag">Himalayan Views</span>
+                            <span class="feature-tag">Eco-Friendly</span>
+                            <span class="feature-tag">Nature Trails</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Width Experience Section -->
+    <section class="full-width-section">
+        <video class="full-width-video" autoplay muted loop playsinline>
+            <source src="campus-life.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="full-width-content">
+            <h2>Living the KUSOM Experience</h2>
+            <p>More than just a campus—it's a community where students from across Nepal come together to learn, grow, and create lasting memories. From sunrise study sessions to late-night project collaborations, every corner of our campus tells a story.</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="section-header" style="color: white;">
+                <h2 class="section-title" style="color: white;">Campus by Numbers</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">The data behind our vibrant campus community</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Acres of Green Campus</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Modern Labs & Facilities</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">WiFi Coverage</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Library & Lab Access</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Timeline -->
+    <section class="timeline-section" id="facilities">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">FACILITIES</span>
+                <h2 class="section-title">Your Journey Through Campus</h2>
+                <p class="section-subtitle">Explore the world-class facilities that support your academic and personal growth</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Academic Excellence</h3>
+                        <p>Smart classrooms with interactive whiteboards, advanced audio-visual equipment, and ergonomic furniture designed for collaborative learning. Each space is optimized for modern pedagogical approaches.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Research & Innovation</h3>
+                        <p>Dedicated research labs equipped with cutting-edge technology for BBIS students to explore data analytics, AI, business intelligence, and emerging technologies through hands-on projects.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Student Wellness</h3>
+                        <p>Comprehensive health services, counseling center, meditation rooms, and recreational facilities ensuring your physical and mental well-being throughout your academic journey.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Digital Infrastructure</h3>
+                        <p>Campus-wide high-speed internet, cloud computing resources, software licenses for industry-standard tools, and 24/7 IT support for all your academic and project needs.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">GALLERY</span>
+                <h2 class="section-title">Campus in Pictures</h2>
+                <p class="section-subtitle">A visual journey through life at KUSOM</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="image-placeholder" style="padding: 2rem;">📷 Add image: Students studying</div

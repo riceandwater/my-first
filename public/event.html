@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BBIS Events, Workshops & Activities | KU SOM</title>
+  <meta name="description" content="Explore BBIS student events, hackathons, seminars, workshops and festivals at KU School of Management. Click each event to visit its Instagram page." />
+  <link rel="icon" href="/favicon.ico">
+  <style>
+    :root{
+      --accent:#7c2d2d; /* maroon-ish accent */
+      --muted:#666;
+      --card-bg:#fff;
+      --glass: rgba(255,255,255,0.85);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    body{margin:0; background:linear-gradient(180deg,#fafafa,#f3f3f3); color:#222;}
+    .container{max-width:1100px;margin:36px auto;padding:20px;}
+    header{display:flex;align-items:center;gap:16px}
+    .logo{width:64px;height:64px;border-radius:8px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    h1{margin:8px 0 2px;font-size:28px}
+    p.lead{margin:0;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:22px}
+
+    .card{background:var(--card-bg);border-radius:12px;box-shadow:0 6px 18px rgba(30,30,30,0.06);overflow:hidden;display:flex;flex-direction:column}
+    .card .imgwrap{position:relative;padding-top:56%;background:#e9e9e9}
+    .card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .card .content{padding:14px 16px;flex:1;display:flex;flex-direction:column}
+    .card h3{margin:0 0 8px;font-size:18px}
+    .card p{margin:0 0 12px;color:var(--muted);font-size:14px}
+    .card .meta{margin-top:auto;display:flex;gap:8px;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(0,0,0,0.05);text-decoration:none;font-weight:600}
+    .btn.ig{background:linear-gradient(90deg,#fff, #fff);color:var(--accent)}
+    .btn.view{background:var(--accent);color:#fff}
+
+    /* simple responsive toolbar */
+    .toolbar{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .pill{background:var(--glass);padding:8px 12px;border-radius:999px;border:1px solid rgba(0,0,0,0.03);font-size:14px}
+
+    footer{margin-top:36px;padding-top:18px;border-top:1px dashed #e6e6e6;color:var(--muted);font-size:14px}
+
+    @media (max-width:480px){h1{font-size:22px}.logo{width:52px;height:52px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+
+  <img class="logo" src="ku logo.jpg" alt="KU Logo">
+  <div>
+        <h1>Events, Workshops & Activities — BBIS, KU SOM</h1>
+        <p class="lead">Browse recent events. Click an event's Instagram link to open its page.</p>
+      </div>
+    </header>
+
+    <div class="toolbar" aria-hidden="true">
+      <div class="pill">Category: Hackathon</div>
+      <div class="pill">Category: Fashion forward</div>
+      <div class="pill">Category: Ted X</div>
+      <div class="pill">Category: Cultural Festival</div>
+    </div>
+
+    <!-- Gallery grid of events. Replace src values with actual images. Each card has space for IG link -->
+    <section class="event-section">
+  <h2>Recent Events & Highlights</h2>
+
+  <!-- Event 1 -->
+  <div class="event-block">
+    <h3>Hackathon</h3>
+    <div class="event-images">
+      <img src="hack1.jpg" alt="Orientation Event Photo 1">
+      <img src="hack2.jpg" alt="Orientation Event Photo 2">
+      <img src="hack3.jpg" alt="Orientation Event Photo 3">
+    </div>
+    <a class="insta-btn" href="https://www.instagram.com/sbis.mic?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">View on Instagram</a>
+  </div>
+
+  <!-- Event 2 -->
+  <div class="event-block">
+    <h3>Fashion forward (Aarambha)</h3>
+    <div class="event-images">
+      <img src="fas1.jpg" alt="Workshop Photo 1">
+      <img src="fas2.png" alt="Workshop Photo 2">
+      <img src="fas3.png" alt="Workshop Photo 3">
+    </div>
+    <a class="insta-btn" href="https://www.instagram.com/fashionforward025?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">View on Instagram</a>
+  </div>
+
+  <!-- Event 3 -->
+  <div class="event-block">
+    <h3>Christmas Celebration</h3>
+    <div class="event-images">
+      <img src="chr1.JPG" alt="Sports Photo 1">
+      <img src="chr2.JPG" alt="Sports Photo 2">
+      <img src="chr3.JPG" alt="Sports Photo 3">
+    </div>
+    <a class="insta-btn" href="https://www.instagram.com/sbis.mic?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">View on Instagram</a>
+  </div>
+
+  <!-- Event 4 -->
+  <div class="event-block">
+    <h3>Ted X</h3>
+    <div class="event-images">
+      <img src="ted1.png" alt="Sports Photo 1">
+      <img src="ted2.png" alt="Sports Photo 2">
+      <img src="ted3.png" alt="Sports Photo 3">
+    </div>
+    <a class="insta-btn" href="https://www.instagram.com/tedxkathmanduuniversity?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">View on Instagram</a>
+  </div>
+
+  <!-- Event 5 -->
+  <div class="event-block">
+    <h3>Empower Her (Hult Prize)</h3>
+    <div class="event-images">
+      <img src="emp1.png" alt="Sports Photo 1">
+      <img src="emp2.png" alt="Sports Photo 2">
+      <img src="emp3.png" alt="Sports Photo 3">
+    </div>
+    <a class="insta-btn" href="https://www.instagram.com/empowerher.ku?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">View on Instagram</a>
+  </div>
+
+
+ <!-- Event 6-->
+ <div class="event-block">
+    <h3>Factoids (IS Club)</h3>
+    <div class="event-images">
+      <img src="fac1.jpg" alt="Sports Photo 1">
+      <img src="fac2.jpg" alt="Sports Photo 2">
+      <img src="fac3.jpg" alt="Sports Photo 3">
+    </div>
+    <a class="insta-btn" href="https://www.instagram.com/kusomisc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">View on Instagram</a>
+  </div>
+
+
+
+<!-- Event 7-->
+<div class="event-block">
+    <h3>TechEd</h3>
+    <div class="event-images">
+      <img src="tech1.jpg" alt="Sports Photo 1">
+      <img src="tech2.jpg" alt="Sports Photo 2">
+      <img src="tech3.jpg" alt="Sports Photo 3">
+    </div>
+    <a class="insta-btn" href="https://www.instagram.com/sbis.mic?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">View on Instagram</a>
+  </div>
+
+<!-- Event 8-->
+<div class="event-block">
+    <h3>Cultural Festival</h3>
+    <div class="event-images">
+      <img src="fest1.png" alt="Sports Photo 1">
+      <img src="fest2.png" alt="Sports Photo 2">
+      <img src="fest3.png" alt="Sports Photo 3">
+    </div>
+    <a class="insta-btn" href="https://www.instagram.com/sbis.mic?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">View on Instagram</a>
+  </div>
+
+
+
+
+</section>
+
+<style>
+    .logo {
+  width: 49px;
+  height: 49px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.event-section {
+  width: 90%;
+  margin: auto;
+  padding: 50px 0;
+}
+
+.event-block {
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #ccc;
+}
+
+.event-block h3 {
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.event-images {
+  display: flex;
+  gap: 15px;
+}
+
+.event-images img {
+  width: 32%;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.event-images img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+.insta-btn {
+  display: inline-block;
+  margin-top: 15px;
+  background: #b40e30;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+}
+</style>
+
+   
+  </div>
+
+  <script>
+    // Small helper: verify Instagram links point somewhere (non-empty) and show tooltip in console.
+    document.querySelectorAll('[data-instagram]').forEach(a=>{
+      const url = a.dataset.instagram || a.href;
+      if(!url || url.endsWith('#')) console.warn('Instagram link missing for', a.closest('.card')?.id || a);
+    });
+  </script>
+</body>
+</html>
