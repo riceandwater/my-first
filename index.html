@@ -50,12 +50,18 @@
         }
 
         .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 900px;
+            margin: 1 auto;
             display: flex;
-            justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+        }
+
+        .header-logo {
+            height: 70px;
+            width: 70px;
+            object-fit: full;
+            border-radius: 8px;
         }
 
         .logo {
@@ -63,6 +69,7 @@
             font-weight: bold;
             color: var(--primary-color);
         }
+
 
         .nav-links {
             display: flex;
@@ -533,8 +540,10 @@
 
     <!-- ========== NAVIGATION ========== -->
     <nav>
-        <div class="nav-container">
-            <div class="logo">CENTRAL KUSOM</div>
+        <div class="nav-container"> 
+            
+       <img src="public/ku logo.jpg" alt="KU Logo" class="header-logo">
+       <div class="logo" > BBIS AT CENTRAL KUSOM </div>  
             <ul class="nav-links">
                 
         </div>
@@ -641,7 +650,7 @@
                     <div class="card-content">
                         <h3>Central Kusom </h3>
                         <p>Study in modern facilities, collaborate in tech labs, relax in student lounges, and enjoy recreational spaces. Our Dhulikhel campus offers everything you need for academic excellence and personal well-being.</p>
-                        <a href="public/campus.html"card-link">Explore Campus →</a>
+                        <a href="public/campus.html" class="card-link">Explore Campus →</a>
                     </div>
                 </div>
 
@@ -661,6 +670,8 @@
                 <!-- CARD 5: NEW CARD - CUSTOMIZE THIS -->
                 <div class="card">
                     <div class="card-image">
+                    <img src="public/nn.jpg" alt="Student clubs meeting" style="width: 100%; height: 100%; object-fit: cover">           
+
                     </div>
                     <div class="card-content">
                         <h3>Curriculum</h3>
